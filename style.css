@@ -1,0 +1,23 @@
+:root {
+    --grid-rows: 1; 
+    --grid-cols: 1; 
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    gap: 0; 
+    width: 960px;
+    
+}
+
+.grid-item {
+    padding: 1em;
+    border: 1px solid #ddd;
+    aspect-ratio: 1;
+}
+
+.grid-item:hover {
+    background-color: black;
+}
