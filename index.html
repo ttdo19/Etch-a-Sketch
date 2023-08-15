@@ -2,12 +2,26 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <script src="app.js"defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Borel&family=Emilys+Candy&family=Parisienne&family=Roboto&family=Roboto+Serif:opsz@8..144&display=swap" rel="stylesheet">
         <title>Etch-a-Sketch</title>
     </head>
 
     <body>
-        <div id="container"></div>
+        <h1 id="title">Etch-a-Sketch</h1>
+        <div id="main-container">
+            <div id="modification-menu">
+                <button id="toggle-grid">Toggle Grid</button>
+                <div class="slide-container">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
+                <div id="num-divs"></div>
+            </div>
+            <div id="container"></div>
+        </div>
     </body>
 </html>

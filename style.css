@@ -1,6 +1,25 @@
+body {
+    background-color: lightgray;
+}
 :root {
-    --grid-rows: 1; 
-    --grid-cols: 1; 
+    --grid-rows: 50; 
+    --grid-cols: 50; 
+}
+
+#main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20%; 
+}
+
+#title {
+    font-family: 'Emilys Candy', cursive;
+    font-size: 80px;
+    text-align: center;
+    margin: 20px -5px; 
+    height: fit-content;
 }
 
 #container {
@@ -8,16 +27,69 @@
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     gap: 0; 
-    width: 960px;
-    
+    height: 640px; 
+    width: 640px; 
+    background-color: white;
 }
 
-.grid-item {
-    padding: 1em;
-    border: 1px solid #ddd;
+.grid-item{
     aspect-ratio: 1;
+    border: none; 
+}
+
+.with-border {
+    border: 1px solid #ddd;
 }
 
 .grid-item:hover {
     background-color: black;
+}
+
+#modification-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; 
+}
+
+button {
+    border: 1px solid black; 
+    width: fit-content;
+    transition: all 0.4s ease; 
+    font-family: 'Roboto Serif', serif;
+}
+
+button:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 0 0 20px 1px;
+}
+
+.slide-container {
+    width: 100%;
+}
+
+.slider {
+    appearance: none;
+    width: 100%; 
+    height: 25px; 
+    background: gray;
+    border-radius: 5px;  
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s;
+    transition: 0.2s; 
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 50px;
+    height: 50px; 
+    border: 0; 
+    background: url('icons8-pencil-50.png');
+    cursor: pointer;
 }
