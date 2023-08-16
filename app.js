@@ -2,6 +2,9 @@ let hasBorder = 1;
 let eraserIsOn = 0;  
 let gridSize; 
 let penIsActive = 0; 
+let rainbowMode = 0; 
+let shadingIsOn = 0; 
+let lighteningIsOn = 0; 
 let backgroundColor = "#FFFFFF"; 
 let penColor = "#000000"; 
 
@@ -13,10 +16,16 @@ const clearBtn = document.querySelector("#clear");
 const eraserBtn = document.querySelector("#eraser");
 const backgroundColorPicker =document.querySelector("#background-color-picker"); 
 const penColorPicker =document.querySelector("#pen-color-picker"); 
+const randomColorBtn = document.querySelector("#random-color"); 
+const shadingBtn = document.querySelector("#shading"); 
+const lighteningBtn = document.querySelector("#lighten"); 
 
 toggleGridBtn.addEventListener('click', toggleBorder); 
 clearBtn.addEventListener('click', clearColor); 
 eraserBtn.addEventListener('click', toogleEraser); 
+randomColorBtn.addEventListener('click', toogleRainbowMode); 
+shadingBtn.addEventListener('click', toggleShading); 
+lighteningBtn.addEventListener('click', toggleLightening); 
 
 function makeGrid(rows, cols) {
     container.style.backgroundColor = backgroundColor; 
@@ -91,17 +100,24 @@ function togglePen() {
 function activatePen(e) {
     if (eraserIsOn) {
         e.target.style.backgroundColor = backgroundColor; 
+        e.target.style.filter = "brightness(1)"; 
         e.target.classList.remove("currently-used"); 
     }
     else {
-        e.target.style.backgroundColor = penColor; 
+        if (rainbowMode) e.target.style.backgroundColor = randomColor(); 
+        else e.target.style.backgroundColor = penColor; 
+        if (shadingIsOn) applyShading(e.target); 
+        if (lighteningIsOn) applyLightening(e.target); 
         e.target.classList.add("currently-used"); 
     }
 }
 
 function clearColor() {
     const cells = document.querySelectorAll(".grid-item");
-    cells.forEach((cell)=> cell.style.backgroundColor = backgroundColor); 
+    cells.forEach((cell)=> {
+        cell.style.backgroundColor = backgroundColor; 
+        cell.style.filter = "brightness(1)"; 
+    }); 
     clearBtn.classList.add("clicked"); 
     setTimeout(() => clearBtn.classList.remove("clicked"), 400); 
 }
@@ -120,7 +136,51 @@ function updateBackgroundColor(e) {
 }
 
 function updatePenColor(e) {
-    const currentlyUsedCells = Array.from(document.querySelectorAll(".currently-used")); 
-    // currentlyUsedCells.forEach((cell) => cell.style.backgroundColor = e.target.value); 
     penColor = e.target.value; 
+    if(rainbowMode) toogleRainbowMode(); 
+}
+
+function randomColor() {
+    //this function generates random bright color
+    return `hsl(${Math.random() * 360}, 100%, 50%)`;
+}
+
+function toogleRainbowMode() {
+    rainbowMode = !rainbowMode; 
+    randomColorBtn.classList.toggle("clicked"); 
+}
+
+function applyShading(cell) {
+    const compStyles = window.getComputedStyle(cell);
+    let brightnessLevel = parseFloat(compStyles.getPropertyValue("--brightness")); 
+    if (brightnessLevel - 0.15 < 0) brightnessLevel = 0; 
+    else brightnessLevel = brightnessLevel - 0.15; 
+    cell.style.setProperty("--brightness", brightnessLevel); 
+    cell.style.filter = `brightness(${brightnessLevel})`; 
+}
+
+function applyLightening(cell) {
+    const compStyles = window.getComputedStyle(cell);
+    let brightnessLevel = parseFloat(compStyles.getPropertyValue("--brightness")); 
+    brightnessLevel = brightnessLevel + 0.15; 
+    cell.style.setProperty("--brightness", brightnessLevel); 
+    cell.style.filter = `brightness(${brightnessLevel})`; 
+}
+
+function toggleShading() {
+    shadingBtn.classList.toggle("clicked"); 
+    shadingIsOn = !shadingIsOn; 
+    if (lighteningIsOn) {
+        lighteningBtn.classList.toggle("clicked"); 
+        lighteningIsOn = !lighteningIsOn; 
+    }
+}
+
+function toggleLightening() {
+    lighteningBtn.classList.toggle("clicked"); 
+    lighteningIsOn = !lighteningIsOn; 
+    if (shadingIsOn) {
+        shadingBtn.classList.toggle("clicked"); 
+        shadingIsOn = !shadingIsOn; 
+    }
 }
