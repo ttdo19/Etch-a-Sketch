@@ -3,20 +3,23 @@ let eraserIsOn = 0;
 let gridSize; 
 let penIsActive = 0; 
 let backgroundColor = "#FFFFFF"; 
+let penColor = "#000000"; 
 
-const container = document.getElementById("container"); 
+const container = document.getElementById("grid-container"); 
 const slider = document.getElementById("myRange")
 const numDiv = document.querySelector("#num-divs")
 const toggleGridBtn = document.querySelector("#toggle-grid"); 
 const clearBtn = document.querySelector("#clear"); 
 const eraserBtn = document.querySelector("#eraser");
-const colorPicker =document.querySelector("#color-picker"); 
+const backgroundColorPicker =document.querySelector("#background-color-picker"); 
+const penColorPicker =document.querySelector("#pen-color-picker"); 
 
 toggleGridBtn.addEventListener('click', toggleBorder); 
 clearBtn.addEventListener('click', clearColor); 
 eraserBtn.addEventListener('click', toogleEraser); 
 
 function makeGrid(rows, cols) {
+    container.style.backgroundColor = backgroundColor; 
     container.style.setProperty('--grid-rows', rows); 
     container.style.setProperty('--grid-cols', cols); 
     gridSize = rows; 
@@ -25,6 +28,7 @@ function makeGrid(rows, cols) {
     else cellClassName = "grid-item"; 
     for (let i = 0; i < (rows * cols); i++) {
         let cell = document.createElement("div"); 
+        cell.style.backgroundColor = backgroundColor; 
         // cell.innerText = (i+1); 
         container.appendChild(cell).className = cellClassName; 
         //add the right border to all cells on the right edge of the grid
@@ -39,10 +43,12 @@ function makeGrid(rows, cols) {
 function startup() {
     makeGrid(50, 50); 
     numDiv.innerHTML = "Grid size: 50x50"; 
-    colorPicker.value = backgroundColor; 
-    colorPicker.addEventListener("input", updateBackgroundColor, false); 
-    // colorPicker.addEventListener("change", updateAll, false); 
-    colorPicker.select(); 
+    backgroundColorPicker.value = backgroundColor; 
+    backgroundColorPicker.addEventListener("input", updateBackgroundColor, false); 
+    penColorPicker.value = penColor; 
+    penColorPicker.addEventListener("input", updatePenColor, false); 
+    // backgroundColorPicker.addEventListener("change", updateAll, false); 
+    backgroundColorPicker.select(); 
 }
 
 window.addEventListener("load", startup, false); 
@@ -88,7 +94,7 @@ function activatePen(e) {
         e.target.classList.remove("currently-used"); 
     }
     else {
-        e.target.style.backgroundColor = 'black'; 
+        e.target.style.backgroundColor = penColor; 
         e.target.classList.add("currently-used"); 
     }
 }
@@ -111,4 +117,10 @@ function updateBackgroundColor(e) {
     const notUsedCells = cells.filter((cell) => !currentlyUsedCells.includes(cell)); 
     notUsedCells.forEach((cell) => cell.style.backgroundColor = e.target.value); 
     backgroundColor = e.target.value; 
+}
+
+function updatePenColor(e) {
+    const currentlyUsedCells = Array.from(document.querySelectorAll(".currently-used")); 
+    // currentlyUsedCells.forEach((cell) => cell.style.backgroundColor = e.target.value); 
+    penColor = e.target.value; 
 }
