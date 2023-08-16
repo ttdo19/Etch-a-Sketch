@@ -1,7 +1,8 @@
 let hasBorder = 1;
-let eraserOn = 0;  
+let eraserIsOn = 0;  
 let gridSize; 
-const defaultColor = "#FFFFFF"; 
+let penIsActive = 0; 
+let backgroundColor = "#FFFFFF"; 
 
 const container = document.getElementById("container"); 
 const slider = document.getElementById("myRange")
@@ -30,7 +31,7 @@ function makeGrid(rows, cols) {
         if (hasBorder && (i % cols === cols -1)) cell.classList.add("right-border"); 
         //add the bottom border to all cells on the bottom edge of the grid
         if (hasBorder && (Math.floor(i/rows) === rows-1)) cell.classList.add("bottom-border"); 
-        cell.addEventListener('click', activatePen); 
+        cell.addEventListener('click', togglePen); 
     }
 }
 
@@ -38,14 +39,15 @@ function makeGrid(rows, cols) {
 function startup() {
     makeGrid(50, 50); 
     numDiv.innerHTML = "Grid size: 50x50"; 
-    colorPicker.value = defaultColor; 
-    colorPicker.addEventListener("input", updateAll, false); 
-    colorPicker.addEventListener("change", updateAll, false); 
+    colorPicker.value = backgroundColor; 
+    colorPicker.addEventListener("input", updateBackgroundColor, false); 
+    // colorPicker.addEventListener("change", updateAll, false); 
     colorPicker.select(); 
 }
 
 window.addEventListener("load", startup, false); 
 
+//if user changes the size of the grid, then delete the current one and create a new one
 slider.oninput = function() {
     numDiv.innerHTML = "Grid size: " + this.value + 'x' + this.value; 
     deleteGrid(); 
@@ -54,7 +56,6 @@ slider.oninput = function() {
 
 function deleteGrid() {
     while(container.firstChild) {
-        container.removeEventListener('mousedown', addHoverEffect); 
         container.lastChild = null; 
         container.removeChild(container.lastChild); 
     }
@@ -71,24 +72,43 @@ function toggleBorder() {
     toggleGridBtn.classList.toggle("clicked"); 
 }
 
+function togglePen() {
+    const cells = document.querySelectorAll(".grid-item");
+    if (!penIsActive) {    
+        cells.forEach((cell) => cell.addEventListener("mouseleave", activatePen)); 
+    } else {
+        cells.forEach((cell) => cell.removeEventListener("mouseleave", activatePen)); 
+    }
+    penIsActive = !penIsActive; 
+}
+
 function activatePen(e) {
-    if (eraserOn) e.target.style.backgroundColor = 'white'; 
-    else e.target.style.backgroundColor = 'black'; 
+    if (eraserIsOn) {
+        e.target.style.backgroundColor = backgroundColor; 
+        e.target.classList.remove("currently-used"); 
+    }
+    else {
+        e.target.style.backgroundColor = 'black'; 
+        e.target.classList.add("currently-used"); 
+    }
 }
 
 function clearColor() {
     const cells = document.querySelectorAll(".grid-item");
-    cells.forEach((cell)=> cell.style.backgroundColor = 'white'); 
+    cells.forEach((cell)=> cell.style.backgroundColor = backgroundColor); 
     clearBtn.classList.add("clicked"); 
     setTimeout(() => clearBtn.classList.remove("clicked"), 400); 
 }
 
 function toogleEraser() {
-    eraserOn = !eraserOn
+    eraserIsOn = !eraserIsOn; 
     eraserBtn.classList.toggle("clicked"); 
 }
 
-function updateAll(e) {
-    const cells = document.querySelectorAll(".grid-item"); 
-    cells.forEach((cell) => cell.style.backgroundColor = e.target.value); 
+function updateBackgroundColor(e) {
+    const cells = Array.from(document.querySelectorAll(".grid-item")); 
+    const currentlyUsedCells = Array.from(document.querySelectorAll(".currently-used")); 
+    const notUsedCells = cells.filter((cell) => !currentlyUsedCells.includes(cell)); 
+    notUsedCells.forEach((cell) => cell.style.backgroundColor = e.target.value); 
+    backgroundColor = e.target.value; 
 }
