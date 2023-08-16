@@ -3,8 +3,9 @@ body {
 }
 :root {
     --grid-rows: 50; 
-    --grid-cols: 50; 
-}
+    --grid-cols: 50;  
+} 
+
 
 #main-container {
     display: flex;
@@ -22,29 +23,40 @@ body {
     height: fit-content;
 }
 
+/* Grid container and its children */
 #container {
     display: grid;
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
-    gap: 0; 
     height: 640px; 
     width: 640px; 
     background-color: white;
 }
 
 .grid-item{
-    aspect-ratio: 1;
-    border: none; 
+    /* aspect-ratio: 1; */
+    /* border: 1px rgba(0, 0, 0, 0.041) solid; */
+    background-color: rgba(255, 255, 255, 1);
 }
 
-.with-border {
-    border: 0.2px solid #ddd;
+.top-left-border {
+    border-top: 1px solid #ddd; 
+    border-left: 1px solid #ddd;
+}
+
+.right-border {
+    border-right: 1px solid #ddd;
+}
+
+.bottom-border {
+    border-bottom: 1px solid #ddd;
 }
 
 .grid-item:hover {
     background-color: black;
 }
 
+/* menu to modify the grid */
 #modification-menu {
     display: flex;
     flex-direction: column;
@@ -78,6 +90,7 @@ button:hover {
     background-color: #C5C3C6;
 }
 
+/* slider */
 .slide-container {
     width: 100%;
 }
@@ -105,4 +118,24 @@ button:hover {
     border: 0; 
     background: url('icons8-pencil-50.png');
     cursor: pointer;
+}
+
+/* color picker */
+.bgc-picker-container {
+    display: flex; 
+    flex-direction: row;
+}
+
+input[type="color"] {
+    outline: none; 
+    border: none;
+    background-color: rgba(0,0,0,0);
+    border-radius: 2px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
 }
