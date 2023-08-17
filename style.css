@@ -163,13 +163,13 @@ input[type="color"]::-webkit-color-swatch {
 
 @media only screen and (max-device-width:480px) {
     #grid-container {
-        height: 70vw; 
-        width: 70vw; 
+        height: 75vw; 
+        width: 75vw; 
     }
 
     #grid-container-wrapper {
-        height: 75vw; 
-        width: 75vw; 
+        height: 80vw; 
+        width: 80vw; 
     }
 
     #modification-menu {
@@ -178,34 +178,30 @@ input[type="color"]::-webkit-color-swatch {
         gap: 1.5vh; 
         width: 70vw; 
         padding: 2.5vw;
-        height: 30vh;
+        height: 20vh;
         font-size: 1vh; 
     }
 
     button {
-        height: 5vh; 
-        width: 20vw; 
+        height: 4vh; 
+        width: 15vw; 
         font-size: 1vh; 
     }
 
     #main-container {
         flex-direction: column;
-        gap: 5vh; 
+        gap: 2vh; 
     }
     .slide-container {
-        width: 20vw;
+        width: 25vw;
+        height: 60px; 
     }
 
     .slider {
         height: 1.5vh;
+        width: 100%; 
     }
 
-    .slider::-webkit-slider-thumb {
-        width: 4vh; 
-        height: 4vh;
-        background: url('icons8-pencil-50.png') no repeat;
-        /* background-size: cover; */
-    }
     input[type="color"] {
         width: 5vw; 
     }
