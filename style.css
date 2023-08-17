@@ -181,16 +181,16 @@ input[type="color"]::-webkit-color-swatch {
 
     #modification-menu {
         flex-wrap: wrap;
-        gap: 1vw; 
+        gap: 3vw; 
         width: 70vw; 
         padding: 2.5vw;
-        height: 20vh;
+        height: 15vh;
         font-size: 1vh; 
     }
 
     button {
         height: 4vh; 
-        width: 25vw; 
+        width: 18vw; 
         font-size: 1vh; 
         border: 1px solid black; 
     }
@@ -210,8 +210,8 @@ input[type="color"]::-webkit-color-swatch {
     }
 
     .slider::-webkit-slider-thumb {
-        width: 5vh;
-        height: 5vh; 
+        width: 3vh;
+        height: 3vh; 
         background-size: cover;
     }
 
@@ -223,8 +223,9 @@ input[type="color"]::-webkit-color-swatch {
     }
     #grid-slider {
         gap: 0.5vw; 
+        height: 5vh; 
     }
-    
+
     #grid-slider,
     .color-picker-container {
         width: 25vw;
