@@ -196,7 +196,7 @@ input[type="color"]::-webkit-color-swatch {
 
     button {
         height: 4vh; 
-        width: 20vw; 
+        width: 25vw; 
         font-size: 1vh; 
         border: 1px solid black; 
     }
@@ -225,7 +225,7 @@ input[type="color"]::-webkit-color-swatch {
         width: 5vw; 
     }
     #title {
-        font-size: 5vh;
+        font-size: 3vh;
     }
     #grid-slider {
         gap: 0.5vw; 
@@ -238,6 +238,6 @@ input[type="color"]::-webkit-color-swatch {
     }
 
     #header {
-        height: 14vh; 
+        height: 10vh; 
     }
 }
