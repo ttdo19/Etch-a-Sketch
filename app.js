@@ -19,6 +19,8 @@ const penColorPicker =document.querySelector("#pen-color-picker");
 const randomColorBtn = document.querySelector("#random-color"); 
 const shadingBtn = document.querySelector("#shading"); 
 const lighteningBtn = document.querySelector("#lighten"); 
+const closeBtn = document.querySelector("#close"); 
+const popup = document.querySelector(".popup"); 
 
 toggleGridBtn.addEventListener('click', toggleBorder); 
 clearBtn.addEventListener('click', clearColor); 
@@ -26,6 +28,7 @@ eraserBtn.addEventListener('click', toogleEraser);
 randomColorBtn.addEventListener('click', toogleRainbowMode); 
 shadingBtn.addEventListener('click', toggleShading); 
 lighteningBtn.addEventListener('click', toggleLightening); 
+closeBtn.addEventListener('click', closePopup); 
 
 function makeGrid(rows, cols) {
     container.style.backgroundColor = backgroundColor; 
@@ -183,4 +186,8 @@ function toggleLightening() {
         shadingBtn.classList.toggle("clicked"); 
         shadingIsOn = !shadingIsOn; 
     }
+}
+
+function closePopup() {
+    popup.style.display = "none"; 
 }
