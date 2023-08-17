@@ -163,20 +163,31 @@ input[type="color"]::-webkit-color-swatch {
 
 @media only screen and (max-device-width:480px) {
     #grid-container {
-        height: 46vw; 
-        width: 46vw; 
+        height: 66vw; 
+        width: 66vw; 
     }
 
     #grid-container-wrapper {
-        height: 49vw; 
-        width: 49vw; 
+        height: 70vw; 
+        width: 70vw; 
     }
 
     #modification-menu {
-        gap: 2vh; 
-        width: 20vw; 
+        flex-direction: row;
+        gap: 1.5vh; 
+        width: 66vw; 
         padding: 3vh;
-        height: 43vw;
+        height: 20vw;
+        font-size: 0.5vh; 
+    }
+
+    button {
+        height: 2vh; 
+        font-size: 0.5vh; 
+    }
+
+    #main-container {
+        flex-direction: column;
     }
     
 }
