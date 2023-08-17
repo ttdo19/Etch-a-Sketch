@@ -99,6 +99,7 @@ button {
     border-radius: 10px;
     transition: all 0.4s ease; 
     font-family: 'Roboto Serif', serif;
+    color: black; 
 }
 
 button:hover {
@@ -191,16 +192,37 @@ input[type="color"]::-webkit-color-swatch {
     padding: 5vw; 
     border: 1px solid black;
     width: 70%; 
-    height: 40%; 
+    height: fit-content; 
     font-size: 3vh;
     font-family: 'Roboto Serif', serif;
     align-self: center;
+    text-align: center;
 }
+
+.popup-content.h1 {
+    font-size: 4vh;
+    font-weight: bold;
+    font-family: 'Parisienne', cursive;
+}
+
+.popup.button {
+    position: fixed;
+    right: 0; 
+    top: 0; 
+    width: 3vw;
+    height: 3vh; 
+    border-radius: 50%; 
+    font-size: 2vh;
+}
+
 
 /* The CSS for viewing website on mobile */
 @media only screen and (max-device-width:480px) {
     .popup {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     
     #grid-container {
@@ -254,6 +276,7 @@ input[type="color"]::-webkit-color-swatch {
     }
     #title {
         font-size: 5vh;
+        margin-left: 10vw; 
     }
     #grid-slider {
         gap: 0.5vw; 
@@ -267,6 +290,5 @@ input[type="color"]::-webkit-color-swatch {
 
     #header {
         height: 10vh; 
-        margin: auto; 
     }
 }
