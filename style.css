@@ -178,13 +178,13 @@ input[type="color"]::-webkit-color-swatch {
         gap: 1.5vh; 
         width: 70vw; 
         padding: 2.5vw;
-        height: 10vw;
+        height: 15vh;
         font-size: 1vh; 
     }
 
     button {
-        height: 3vh; 
-        width: 7vw; 
+        height: 5vh; 
+        width: 20vw; 
         font-size: 1vh; 
     }
 
@@ -193,7 +193,7 @@ input[type="color"]::-webkit-color-swatch {
         gap: 5vh; 
     }
     .slide-container {
-        width: 10vw;
+        width: 20vw;
     }
 
     .slider {
@@ -201,8 +201,9 @@ input[type="color"]::-webkit-color-swatch {
     }
 
     .slider::-webkit-slider-thumb {
-        width: 2vh; 
-        height: 2vh;
+        width: 4vh; 
+        height: 4vh;
+        background: url('icons8-pencil-50.png') no repeat;
         background-size: cover;
     }
     input[type="color"] {
