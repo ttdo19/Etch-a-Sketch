@@ -188,31 +188,33 @@ input[type="color"]::-webkit-color-swatch {
 }
 .popup-content {
     background-color:#B5B8BA; 
-    margin: 10%; 
+    margin: 5%; 
     padding: 5vw; 
     border: 1px solid black;
     width: 70%; 
     height: fit-content; 
     font-size: 3vh;
     font-family: 'Roboto Serif', serif;
-    align-self: center;
     text-align: center;
 }
-
-.popup-content.h1 {
-    font-size: 4vh;
+p{
+    margin-bottom: -10%;
+}
+#recommendation {
+    font-size: 10vh;
     font-weight: bold;
     font-family: 'Parisienne', cursive;
+    height: 11vh; 
+    margin: 0; 
+    color: black;
 }
 
-.popup.button {
-    position: fixed;
-    right: 0; 
-    top: 0; 
-    width: 3vw;
-    height: 3vh; 
-    border-radius: 50%; 
+#close {
+    width: 10vw;
+    height: 3vw; 
     font-size: 2vh;
+    color: red; 
+    margin: -5%; 
 }
 
 
