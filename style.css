@@ -115,6 +115,7 @@ button:hover {
     flex-direction: column;
     width: 30vh; 
     gap: 1.5vh; 
+    height: 10vh; 
 }
 .slide-container {
     width: 100%;
@@ -180,7 +181,7 @@ input[type="color"]::-webkit-color-swatch {
 
     #modification-menu {
         flex-wrap: wrap;
-        gap: 1.5vh; 
+        gap: 1vw; 
         width: 70vw; 
         padding: 2.5vw;
         height: 20vh;
@@ -211,6 +212,7 @@ input[type="color"]::-webkit-color-swatch {
     .slider::-webkit-slider-thumb {
         width: 5vh;
         height: 5vh; 
+        background-size: cover;
     }
 
     input[type="color"] {
@@ -220,6 +222,11 @@ input[type="color"]::-webkit-color-swatch {
         font-size: 7vh;
     }
     #grid-slider {
-        gap: 1vh; 
+        gap: 0.5vw; 
+    }
+    
+    #grid-slider,
+    .color-picker-container {
+        width: 25vw;
     }
 }
