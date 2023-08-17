@@ -239,7 +239,6 @@ input[type="color"]::-webkit-color-swatch {
 
     #header {
         height: 10vh; 
-        align-items: center;
-        justify-content: center;
+        margin: auto; 
     }
 }
