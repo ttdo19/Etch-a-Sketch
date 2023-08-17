@@ -28,6 +28,7 @@ body {
     font-family: 'Emilys Candy', cursive;
     font-size: 10vh;
     text-align: center;
+    width: fit-content;
 }
 
 /* Grid container and its children */
@@ -225,7 +226,7 @@ input[type="color"]::-webkit-color-swatch {
         width: 5vw; 
     }
     #title {
-        font-size: 3vh;
+        font-size: 4vh;
     }
     #grid-slider {
         gap: 0.5vw; 
