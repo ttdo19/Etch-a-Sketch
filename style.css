@@ -174,20 +174,38 @@ input[type="color"]::-webkit-color-swatch {
 
     #modification-menu {
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 1.5vh; 
         width: 66vw; 
         padding: 3vh;
-        height: 20vw;
-        font-size: 0.5vh; 
+        height: 10vw;
+        font-size: 1vh; 
     }
 
     button {
         height: 2vh; 
+        width: 3vw; 
         font-size: 0.5vh; 
     }
 
     #main-container {
         flex-direction: column;
+        gap: 5vh; 
     }
-    
+    .slide-container {
+        width: 5vh;
+        height: 2vh; 
+    }
+
+    .slider::-webkit-slider-thumb {
+        width: 2vh; 
+        height: 2vh;
+        object-fit: cover;
+    }
+    input[type="color"] {
+        width: 2vw; 
+    }
+    #title {
+        font-size: 5vh;
+    }
 }
