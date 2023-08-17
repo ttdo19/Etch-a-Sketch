@@ -29,6 +29,7 @@ body {
     font-size: 10vh;
     text-align: center;
     width: fit-content;
+    white-space: nowrap;
 }
 
 /* Grid container and its children */
@@ -191,12 +192,12 @@ input[type="color"]::-webkit-color-swatch {
         gap: 2vw; 
         width: 85vw; 
         padding: 2.5vw;
-        height: 15vh;
+        height: 11vh;
         font-size: 1vh; 
     }
 
     button {
-        height: 4vh; 
+        height: 3vh; 
         width: 25vw; 
         font-size: 1vh; 
         border: 1px solid black; 
