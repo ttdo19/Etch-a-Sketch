@@ -16,12 +16,18 @@ body {
     gap: 10%; 
 }
 
+#header {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; 
+}
+
 #title {
     font-family: 'Emilys Candy', cursive;
     font-size: 10vh;
     text-align: center;
-    margin: 2vh -1vh; 
-    height: fit-content;
 }
 
 /* Grid container and its children */
@@ -29,16 +35,16 @@ body {
     display: grid;
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
-    height: 76vh; 
-    width: 76vh; 
+    height: 70vh; 
+    width: 70vh; 
 }
 
 #grid-container-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 79vh; 
-    width: 79vh; 
+    height: 75vh; 
+    width: 75vh; 
     border-radius: 4px;
     background-color: #C0C2C4;
 }
@@ -79,7 +85,7 @@ body {
     width: 30vh; 
     padding: 4vh; 
     background-color: #F4F5F5; 
-    height: 72vh; 
+    height: 67vh; 
     font-family: 'Roboto Serif', serif;
     font-size: 2vh; 
     border-radius: 8px;
@@ -115,7 +121,7 @@ button:hover {
     flex-direction: column;
     width: 30vh; 
     gap: 1.5vh; 
-    height: 10vh; 
+    height: 7vh; 
 }
 .slide-container {
     width: 100%;
@@ -170,19 +176,19 @@ input[type="color"]::-webkit-color-swatch {
 
 @media only screen and (max-device-width:480px) {
     #grid-container {
-        height: 75vw; 
-        width: 75vw; 
+        height: 85vw; 
+        width: 85vw; 
     }
 
     #grid-container-wrapper {
-        height: 80vw; 
-        width: 80vw; 
+        height: 90vw; 
+        width: 90vw; 
     }
 
     #modification-menu {
         flex-wrap: wrap;
-        gap: 3vw; 
-        width: 70vw; 
+        gap: 2vw; 
+        width: 85vw; 
         padding: 2.5vw;
         height: 15vh;
         font-size: 1vh; 
@@ -190,7 +196,7 @@ input[type="color"]::-webkit-color-swatch {
 
     button {
         height: 4vh; 
-        width: 18vw; 
+        width: 20vw; 
         font-size: 1vh; 
         border: 1px solid black; 
     }
@@ -219,7 +225,7 @@ input[type="color"]::-webkit-color-swatch {
         width: 5vw; 
     }
     #title {
-        font-size: 7vh;
+        font-size: 5vh;
     }
     #grid-slider {
         gap: 0.5vw; 
@@ -229,5 +235,9 @@ input[type="color"]::-webkit-color-swatch {
     #grid-slider,
     .color-picker-container {
         width: 25vw;
+    }
+
+    #header {
+        height: 14vh; 
     }
 }

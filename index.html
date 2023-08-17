@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <script src="app.js"defer></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Borel&family=Emilys+Candy&family=Parisienne&family=Roboto&family=Roboto+Serif:opsz@8..144&display=swap" rel="stylesheet">
@@ -12,7 +13,11 @@
     </head>
 
     <body>
-        <h1 id="title">Etch-a-Sketch</h1>
+        <div id="header">
+            <h1 id="title">Etch-a-Sketch</h1>
+            <lottie-player src="https://raw.githubusercontent.com/ttdo19/Lotties/main/drawingAnimation.json" background="transparent"  speed="1"  style="width: auto; height: 110%;" loop autoplay></lottie-player>
+        </div>
+        
         <div id="main-container">
             <div id="modification-menu">
                 <div id="color-picker-container">
