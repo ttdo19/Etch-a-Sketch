@@ -27,8 +27,6 @@ body {
 #title {
     font-family: 'Emilys Candy', cursive;
     font-size: 10vh;
-    text-align: center;
-    width: fit-content;
     white-space: nowrap;
 }
 
@@ -192,7 +190,7 @@ input[type="color"]::-webkit-color-swatch {
         gap: 2vw; 
         width: 85vw; 
         padding: 2.5vw;
-        height: 11vh;
+        height: 13vh;
         font-size: 1vh; 
     }
 
@@ -241,5 +239,7 @@ input[type="color"]::-webkit-color-swatch {
 
     #header {
         height: 10vh; 
+        align-items: center;
+        justify-content: center;
     }
 }
