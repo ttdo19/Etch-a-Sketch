@@ -18,9 +18,9 @@ body {
 
 #title {
     font-family: 'Emilys Candy', cursive;
-    font-size: 80px;
+    font-size: 10vh;
     text-align: center;
-    margin: 20px -5px; 
+    margin: 2vh -1vh; 
     height: fit-content;
 }
 
@@ -29,16 +29,16 @@ body {
     display: grid;
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
-    height: 600px; 
-    width: 600px; 
+    height: 76vh; 
+    width: 76vh; 
 }
 
 #grid-container-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 640px; 
-    width: 640px; 
+    height: 79vh; 
+    width: 79vh; 
     border-radius: 4px;
     background-color: #C0C2C4;
 }
@@ -75,21 +75,21 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center ;
-    gap: 27px; 
-    width: 250px; 
-    padding: 20px; 
+    gap: 3vh; 
+    width: 30vh; 
+    padding: 2vh; 
     background-color: #F4F5F5; 
-    height: 600px; 
+    height: 74vh; 
     font-family: 'Roboto Serif', serif;
-    font-size: 17px; 
+    font-size: 2vh; 
     border-radius: 8px;
 }
 
 button {
     border: 1.5px solid black; 
     width: 100%; 
-    height: 35px; 
-    font-size: 17px; 
+    height: 4.5vh; 
+    font-size: 2vh; 
     border-radius: 10px;
     transition: all 0.4s ease; 
     font-family: 'Roboto Serif', serif;
@@ -117,7 +117,7 @@ button:hover {
 .slider {
     appearance: none;
     width: 100%; 
-    height: 25px; 
+    height: 3vh; 
     background: #C0C2C4;
     border-radius: 5px;  
     outline: none; 
@@ -150,7 +150,8 @@ input[type="color"] {
     border: 1px solid #B5B8BA; 
     background-color: rgba(0,0,0,0);
     border-radius: 2px;
-    height: 17px; 
+    height: 2vh; 
+    width: 5vh; 
 }
 
 input[type="color"]::-webkit-color-swatch-wrapper {
