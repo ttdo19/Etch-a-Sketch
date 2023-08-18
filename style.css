@@ -201,20 +201,18 @@ p{
     margin-bottom: -10%;
 }
 #recommendation {
-    font-size: 10vh;
+    font-size: 8vw;
     font-weight: bold;
     font-family: 'Parisienne', cursive;
-    height: 11vh; 
-    margin: 0; 
+    height: 4vh; 
+    margin-bottom: 1vh; 
     color: black;
 }
 
 #close {
-    width: 10vw;
-    height: 3vw; 
+    width: 20vw;
+    height: 5vw; 
     font-size: 2vh;
-    color: red; 
-    margin: -5%; 
 }
 
 
