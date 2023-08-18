@@ -196,6 +196,7 @@ input[type="color"]::-webkit-color-swatch {
     font-size: 3vh;
     font-family: 'Roboto Serif', serif;
     text-align: center;
+    border-radius: 10px;
 }
 p{
     margin-bottom: -10%;

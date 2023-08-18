@@ -107,11 +107,19 @@ function activatePen(e) {
         e.target.classList.remove("currently-used"); 
     }
     else {
-        if (rainbowMode) e.target.style.backgroundColor = randomColor(); 
-        else e.target.style.backgroundColor = penColor; 
-        if (shadingIsOn) applyShading(e.target); 
-        if (lighteningIsOn) applyLightening(e.target); 
-        e.target.classList.add("currently-used"); 
+        const currentlyUsedCells = Array.from(document.querySelectorAll(".currently-used")); 
+        if (currentlyUsedCells.includes(e.target)) {
+            if (shadingIsOn) applyShading(e.target); 
+            if (lighteningIsOn) applyLightening(e.target); 
+        }
+        if (rainbowMode) {
+            e.target.style.backgroundColor = randomColor(); 
+            e.target.classList.add("currently-used"); 
+        }
+        if (!shadingIsOn && !lighteningIsOn && !rainbowMode){
+            e.target.style.backgroundColor = penColor; 
+            e.target.classList.add("currently-used"); 
+        } 
     }
 }
 
