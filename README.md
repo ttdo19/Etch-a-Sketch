@@ -9,5 +9,4 @@ When viewing the website on your mobile, a popup will automatically be prompted 
 ## On Desktop / Laptop
 
 Game Demo
-
 ![](http://g.recordit.co/bQols9zo5f.gif)
